@@ -1,5 +1,5 @@
 from django import forms
 
-class Formname(forms.form):
+class weightForm(forms.Form):
     date = forms.DateField()
-    weight = forms.Intergerfield()
+    weight = forms.IntegerField()
