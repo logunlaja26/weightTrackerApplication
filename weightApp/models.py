@@ -5,7 +5,7 @@ class userWeight(models.Model):
     weight_entry = models.IntegerField()
 
     def __str__(self):
-        return self.entry_date
+        return str(self.entry_date)
 
     def __str__(self):
         return self.weight_entry
