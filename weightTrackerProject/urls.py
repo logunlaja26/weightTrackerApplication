@@ -20,6 +20,5 @@ from weightApp import views
 urlpatterns = [
     path('',views.home,name='home'),
     path('admin/', admin.site.urls),
-    #path('',include('weightApp.urls'))
     path('weightdata/',views.weightdata,name='weightdata')
 ]

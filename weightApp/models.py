@@ -8,4 +8,4 @@ class userWeight(models.Model):
         return str(self.entry_date)
 
     def __str__(self):
-        return self.weight_entry
+        return str(self.weight_entry)
