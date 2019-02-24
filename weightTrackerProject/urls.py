@@ -20,5 +20,6 @@ from weightApp import views
 urlpatterns = [
     path('',views.home,name='home'),
     path('admin/', admin.site.urls),
-    path('weightdata/',views.weightdata,name='weightdata')
+    path('weightdata/',views.weightdata,name='weightdata'),
+    path('weightdata/',views.getWeight,name='getWeight')
 ]
