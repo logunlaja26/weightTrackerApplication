@@ -1,30 +1,37 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>weightdata</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Make your weight entries.</h1>
+    <h1>Make your weight entries</h1>
     <div class="">
       <form method="POST">
         {{ form }}
         <!-- {{ form.as_p }} -->
         {% csrf_token %}
-        <input type="submit" name="" value="submit">
+        <input type="submit" class='btn btn-primary' value="submit">
       </form>
     </div>
+
     <p></p>
+
     <table style="width:100%" border="2px">
       <tr>
         <th>Date</th>
         <th>weight</th>
       </tr>
+      {% for weight in weight_records %}
       <tr>
-        <td>2/19/2019</td>
-        <td>169</td>
+        <td>{{ weight_records }}</td>
+        <td>{{ weight.entry_date }}</td>
+        <td>{{ weight.weight_entry }}</td>
       </tr>
+      {% endfor %}
     </table>
 
   </body>
