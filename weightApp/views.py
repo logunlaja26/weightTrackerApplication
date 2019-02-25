@@ -25,4 +25,5 @@ def weightdata(request):
 def getWeight(request):
     weight_list = userWeight.objects.all()
     weight_dict = {'weight_records':weight_list}
+    print(weight_list)
     return render(request,'weightApp/weightdata.html',context=weight_dict)
