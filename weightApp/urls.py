@@ -4,5 +4,5 @@ from weightApp import views
 
 urlpatterns = [
     path('',views.home,name='home'),
-    path('',views.weightdata,name='weightdata')
+    path('/weightdata',views.weightdata,name='weightdata')
 ]
