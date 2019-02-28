@@ -19,8 +19,9 @@ def weightdata(request):
         else:
             print('ERROR FORM INVALID')
 
+    context = {
+        'form':form,
+        'weight_records': userWeight.objects.all()
+    }
 
-    if request.method == "GET":
-        weight_list = userWeight.objects.all()
-        weight_dict = {'weight_records':weight_list, 'form': form}
-        return render(request,'weightApp/weightdata.html',context=weight_dict)
+    return render(request,'weightApp/weightdata.html',context)
