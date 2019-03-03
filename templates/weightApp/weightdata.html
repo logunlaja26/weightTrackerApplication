@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
+    <script src=src="{% static "js/modal.js" %}"></script>
     <h1>Make your weight entries</h1>
     <div class="">
       <form method="POST">
@@ -24,14 +25,36 @@
       <tr>
         <th>Date</th>
         <th>weight</th>
+        <th>Modify</th>
       </tr>
       {% for weight in weight_records %}
       <tr>
         <td>{{ weight.entry_date }}</td>
         <td>{{ weight.weight_entry }}</td>
+        <td><button type="modify button" name="button" onclick="openForm()">Modify</button></td>
       </tr>
       {% endfor %}
     </table>
+
+    <div class="modal" id="myForm">
+      <div class="modal-content">
+        <form method="post" class="form-container">
+          <span class="close">&times;</span>
+
+          <label for="weight">Enter Weight</label>
+          <input type="text" name="weight" value="">
+
+          <label for="Date">Enter Date</label>
+          <input type="text" name="Date" value="">
+
+        </form>
+
+        <button id="btn-submit">Submit</button>
+        <button id="btn-close" onclick="closeForm()">Cancel</button>
+
+      </div>
+
+    </div>
 
   </body>
 </html>
