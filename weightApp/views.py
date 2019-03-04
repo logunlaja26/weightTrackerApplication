@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from weightApp.forms import weightForm
 from weightApp.models import userWeight
 # Create your views here.
@@ -18,6 +18,13 @@ def weightdata(request):
             return home(request)
         else:
             print('ERROR FORM INVALID')
+
+    if request.method == "PUT":
+        form = weightForm(request.PUT)
+
+        if form.is_valid():
+            form.save()
+            return redirect('weightApp/weightdata.html')
 
     context = {
         'form':form,
