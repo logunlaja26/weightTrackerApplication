@@ -25,12 +25,14 @@
         <th>Date</th>
         <th>weight</th>
         <th>Modify</th>
+        <th>Delete</th>
       </tr>
       {% for weight in weight_records %}
       <tr>
         <td>{{ weight.entry_date }}</td>
         <td>{{ weight.weight_entry }}</td>
         <td><button type="modify button" name="button" onclick="openForm()">Modify</button></td>
+        <td><button type="delete button" name="button">Delete</button></td>
       </tr>
       {% endfor %}
     </table>
