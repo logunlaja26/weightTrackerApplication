@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <script src=src="{% static "js/modal.js" %}"></script>
+
     <h1>Make your weight entries</h1>
     <div class="">
       <form method="POST">
         {{ form }}
-        <!-- {{ form.as_p }} -->
         {% csrf_token %}
         <input type="submit" class='btn btn-primary' value="submit">
       </form>
@@ -41,10 +40,10 @@
         <form method="post" class="form-container">
           <span class="close">&times;</span>
 
-          <label for="weight">Enter Weight</label>
+          <label for="weight">Entry Date</label>
           <input type="text" name="weight" value="">
 
-          <label for="Date">Enter Date</label>
+          <label for="Date">Weight Entry</label>
           <input type="text" name="Date" value="">
 
         </form>
@@ -53,8 +52,9 @@
         <button id="btn-close" onclick="closeForm()">Cancel</button>
 
       </div>
-
     </div>
+
+    <script src="{% static "js/modal.js" %}"></script>
 
   </body>
 </html>
