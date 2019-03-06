@@ -31,7 +31,7 @@
       <tr>
         <td>{{ weight.entry_date }}</td>
         <td>{{ weight.weight_entry }}</td>
-        <td><button type="modify button" name="button" onclick="openForm()">Modify</button></td>
+        <td><button type="modify button" name="button" onclick="openForm({{ weight.id }},'{{ weight.entry_date }}',{{ weight.weight_entry }})">Modify</button></td>
         <td><button type="delete button" name="button" method="PUT">Delete</button></td>
       </tr>
       {% endfor %}
@@ -42,11 +42,13 @@
         <form method="post" class="form-container">
           <span class="close">&times;</span>
 
-          <label for="weight">Entry Date</label>
-          <input type="text" name="weight" value="">
+          <input hidden type="number" id="id" value="">
 
-          <label for="Date">Weight Entry</label>
-          <input type="text" name="Date" value="">
+          <label for="date">Entry Date</label>
+          <input id="date"type="text" name="date" value="">
+
+          <label for="weight">Weight Entry</label>
+          <input id="weight" type="text" name="weight" value="">
 
         </form>
 

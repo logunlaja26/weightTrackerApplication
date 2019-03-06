@@ -1,5 +1,12 @@
-function openForm() {
+function openForm(id, date, weight) {
    document.getElementById('myForm').style.display = "block";
+
+   // assign id to serve record data from the server side 
+   document.getElementById('id').value = id;
+   // assign the weight input to date
+   document.getElementById('date').value = date;
+   // assign the date input to weight
+   document.getElementById('weight').value = weight;
 }
 
 function closeForm() {
