@@ -27,24 +27,20 @@ def weightdata(request):
     return render(request,'weightApp/weightdata.html',context)
 
 def weightdata_edit(request):
-    # filter the weight record
-    # update the weight record
-    # save the database
 
     form = weightForm()
 
     if request.method == "POST":
-        form = weightForm(request.POST)
-
-        if form.is_valid():
-            form.save(commit=True)
-            return home(request)
-        else:
-            print('ERROR FORM INVALID')
+        # filter the weight record
+        weightEntry = userWeight.objects.filter(id=request.POST['id'])
+        print(weightEntry)
+        # update the weight record
+        weightEntry.update(weight_entry=request.POST['weight'])
+        # save the database
 
     context = {
         'form':form,
         'weight_records': userWeight.objects.all()
     }
 
-    return render(request,'weightApp/weightdata.html',context)
+    return redirect('weightdata')
