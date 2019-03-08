@@ -27,7 +27,7 @@ def weightdata(request):
     return render(request,'weightApp/weightdata.html',context)
 
 def weightdata_edit(request):
-    # filter the weight weight weight weight record
+    # filter the weight record
     # update the weight record
     # save the database
 
