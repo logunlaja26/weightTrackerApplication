@@ -38,3 +38,10 @@ def weightdata_edit(request):
         weightEntry.update(weight_entry=formData['weight'],entry_date = entry_date)
 
     return redirect('weightdata')
+
+def weightdata_delete(request):
+
+    if request.method == "DELETE":
+        userWeight.objects.filter(id=request.DELETE['id']).delete()
+
+    return redirect('weightdata')

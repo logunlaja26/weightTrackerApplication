@@ -21,5 +21,6 @@ urlpatterns = [
     path('',views.home,name='home'),
     path('admin/', admin.site.urls),
     path('weightdata/',views.weightdata,name='weightdata'),
-    path('weightdata/edit',views.weightdata_edit,name='weightdata_edit')
+    path('weightdata/edit',views.weightdata_edit,name='weightdata_edit'),
+    path('weightdata/delete',views.weightdata_delete,name='weightdata_delete')
 ]
