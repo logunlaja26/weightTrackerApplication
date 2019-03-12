@@ -1,0 +1,13 @@
+<div class="modal" id="confirm-delete-modal">
+  <div class="modal-content">
+    <form method="post" action="delete" class="form-container">
+      {% csrf_token %}
+      <span class="close">&times;</span>
+
+      <input hidden type="number" id="confirm-delete-modal-weight-entry-id" name="id">
+
+      <input type="submit" value="confirm">
+      <input type="button" id="confirm-delete-modal-cancel-btn" onclick="closeConfirmDeleteModal()" value ="Cancel" />
+    </form>
+  </div>
+</div>

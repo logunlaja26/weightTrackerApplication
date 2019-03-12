@@ -1,0 +1,20 @@
+<div class="modal" id="myForm">
+  <div class="modal-content">
+    <form method="post" action="edit" class="form-container">
+        {% csrf_token %}
+      <span class="close">&times;</span>
+
+      <input hidden type="number" id="id" name="id" value="">
+
+      <label for="date">Entry Date</label>
+      <input id="date"type="text" name="date" value="">
+
+      <label for="weight">Weight Entry</label>
+      <input id="weight" type="text" name="weight" value="">
+
+      <input type="submit">
+      <button id="btn-close" onclick="closeForm()">Cancel</button>
+    </form>
+
+  </div>
+</div>

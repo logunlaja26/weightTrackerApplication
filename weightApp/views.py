@@ -40,8 +40,9 @@ def weightdata_edit(request):
     return redirect('weightdata')
 
 def weightdata_delete(request):
+    formData = request.POST
 
-    if request.method == "DELETE":
-        userWeight.objects.filter(id=request.DELETE['id']).delete()
+    if request.method == "POST":
+        userWeight.objects.filter(id=formData['id']).delete()
 
     return redirect('weightdata')

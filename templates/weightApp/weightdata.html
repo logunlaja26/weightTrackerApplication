@@ -32,33 +32,16 @@
         <td>{{ weight.entry_date }}</td>
         <td>{{ weight.weight_entry }}</td>
         <td><button type="modify button" name="button" onclick="openForm({{ weight.id }},'{{ weight.entry_date }}',{{ weight.weight_entry }})">Modify</button></td>
-        <td><button type="delete button" name="button" method="DELETE">Delete</button></td>
+        <td><button type="delete button" name="button" onclick="showConfirmDeleteModal({{weight.id}})">Delete</button></td>
       </tr>
       {% endfor %}
     </table>
 
-    <div class="modal" id="myForm">
-      <div class="modal-content">
-        <form method="post" action="edit" class="form-container">
-            {% csrf_token %}
-          <span class="close">&times;</span>
+    {% include "weightApp/edit-modal.html" %}
+    {% include "weightApp/confirm-delete-modal.html" %}
 
-          <input hidden type="number" id="id" name="id" value="">
-
-          <label for="date">Entry Date</label>
-          <input id="date"type="text" name="date" value="">
-
-          <label for="weight">Weight Entry</label>
-          <input id="weight" type="text" name="weight" value="">
-
-          <input type="submit">
-          <button id="btn-close" onclick="closeForm()">Cancel</button>
-        </form>
-
-      </div>
-    </div>
-
-    <script src="{% static "js/modal.js" %}"></script>
+    <script src="{% static "js/modify-modal.js" %}"></script>
+    <script src="{% static "js/confirm-delete-modal.js" %}"></script>
 
   </body>
 </html>
