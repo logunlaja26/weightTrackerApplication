@@ -31,8 +31,8 @@
       <tr>
         <td>{{ weight.entry_date }}</td>
         <td>{{ weight.weight_entry }}</td>
-        <td><button type="modify button" name="button" onclick="openForm({{ weight.id }},'{{ weight.entry_date }}',{{ weight.weight_entry }})">Modify</button></td>
-        <td><button type="delete button" name="button" onclick="showConfirmDeleteModal({{weight.id}})">Delete</button></td>
+        <td><button class="modify-btn" type="modify button" name="button" onclick="openForm({{ weight.id }},'{{ weight.entry_date }}',{{ weight.weight_entry }})">Modify</button></td>
+        <td><button class="delete-btn" type="delete button" name="button" onclick="showConfirmDeleteModal({{weight.id}})">Delete</button></td>
       </tr>
       {% endfor %}
     </table>

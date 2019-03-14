@@ -6,6 +6,7 @@ h1{
 table, th, td {
   border: 1px solid black;
   text-align: center;
+  border-width: medium;
 }
 
 .center {
@@ -45,4 +46,18 @@ table, th, td {
   float: right;
   font-size: 28px;
   font-weight: bold;
+}
+
+.anchor-class {
+  text-align: center;
+}
+
+/* The modify Button */
+.modify-btn {
+  background-color: #f4d142;
+}
+
+/* The delete Button */
+.delete-btn {
+  background-color: #f44141;
 }
