@@ -5,6 +5,7 @@ function openForm(id, date, weight) {
    document.getElementById('id').value = id;
    // assign the weight input to date
    document.getElementById('date').value = date;
+   // document.getElementById('date').value = "01-22-2018";
    // assign the date input to weight
    document.getElementById('weight').value = weight;
 }
