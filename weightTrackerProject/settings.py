@@ -27,7 +27,9 @@ SECRET_KEY = 'r9hijwg+ld=3(!8_r^8ois8!0il9brg9l#=#dyu^0lnk*bl!*o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['myweighttrackerapp.herokuapp.com','localhost', '127.0.0.1']
+#ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
