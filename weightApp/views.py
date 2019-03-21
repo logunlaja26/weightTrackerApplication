@@ -16,9 +16,10 @@ def weightdata(request):
 
         if form.is_valid():
             form.save(commit=True)
-            return home(request)
+            return redirect('weightdata')
         else:
             print('ERROR FORM INVALID')
+
 
     context = {
         'form':form,
@@ -26,6 +27,7 @@ def weightdata(request):
     }
 
     return render(request,'weightApp/weightdata.html',context)
+
 
 def weightdata_edit(request):
     formData = request.POST
