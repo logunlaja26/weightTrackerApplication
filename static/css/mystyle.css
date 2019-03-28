@@ -9,6 +9,10 @@ table, th, td {
   border-width: medium;
 }
 
+tr:hover {
+  background-color: #ddd;
+}
+
 .center {
   display: block;
   margin-left: auto;
